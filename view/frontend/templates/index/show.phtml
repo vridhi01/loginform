@@ -1,0 +1,30 @@
+<div class="external-ajax-call-container">
+    <h2 class="title">
+        <?php echo __('Fetch Data Using ajax'); ?>
+    </h2>
+    <div class="ajax-content">
+        <form class="form external-js-ajax" method="POST">
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit" class="action primary" name="send" id="fetchdata">
+                            <span>
+                                <?php echo __('Click') ?>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form> 
+        <table id="userTable" class="table table-striped">
+            <thead>
+               <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Designation</th>
+               </tr>
+            </thead>
+            <tbody></tbody>
+         </table>
+    </div>
+</div>

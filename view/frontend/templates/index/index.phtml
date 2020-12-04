@@ -1,0 +1,98 @@
+<!--  for internal js file attached
+    <div class="ajax-call-container">
+    <h2 class="title">
+        <?php echo __('Using JS in same Page'); ?>
+    </h2>
+    <div class="ajax-content">
+        <form class="form internal-js-ajax" method="POST">
+            <fieldset class="fieldset">
+                <div class="field email required">
+                    <label class="label" for="email">
+                        <span>
+                            <?php echo __('Email') ?>
+                        </span>
+                    </label>
+                    <div class="control">
+                        <input name="email" value="" autocomplete="off" id="email" type="email" class="input-text" title="<?php echo __('Email') ?>"
+                            data-validate="{required:true, 'validate-email':true}" aria-required="true">
+                    </div>
+                </div>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit" class="action primary" name="send" id="send2">
+                            <span>
+                                <?php echo __('Click') ?>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="result-content content"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    require(
+        ['jquery', 'mage/translate']
+        , function($, $t) {
+        $('.internal-js-ajax').submit(function (event) {
+            if($(this).valid()) {
+                let formValue = $(this).find('#email').val();
+                $.ajax({
+                    url: '<?php echo $block->getUrl('ajaxtutorial/index/ajax'); ?>',
+                    data: {email: formValue},
+                    method: 'POST',
+                    showLoader: true // show full screen loader until response come
+                }).done(function (data) {
+                    $('.result-content').text($t('You Entered: ')+data.email);
+                }).fail(function (data) {
+                    console.log($t('Something Went Wrong') + data);
+                });
+            } else {
+                console.log($t('Something Went Wrong'));
+            }
+            event.preventDefault();
+        });
+    });
+</script> -->
+<div class="external-ajax-call-container">
+    <h2 class="title">
+        <?php echo __('Using External JS'); ?>
+    </h2>
+    <div class="ajax-content">
+        <form class="form external-js-ajax" method="POST">
+            <fieldset class="fieldset">
+                <div class="field email required">
+                    <label class="label" for="email">
+                        <span>
+                            <?php echo __('Email') ?>
+                        </span>
+                    </label>
+                    <div class="control">
+                        <input name="email" value="" autocomplete="off" id="email" type="email" class="input-text" title="<?php echo __('Email') ?>"
+                            data-validate="{required:true, 'validate-email':true}" aria-required="true">
+                    </div>
+                </div>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit" class="action primary" name="send" id="send2">
+                            <span>
+                                <?php echo __('Click') ?>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="result-content content"></div>
+    </div>
+</div>
+
+<!-- for form validation -->
+<script type="text/x-magento-init">
+    {
+        ".form": {
+            "validation": {}
+        }
+    }
+</script>
