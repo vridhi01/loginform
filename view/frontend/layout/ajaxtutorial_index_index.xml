@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<title>AJAX Tutorial | Magento 2</title>
+		<script src="Excellence_AjaxTutorial::js/formajax.js"/>
+	</head>
+    <body>
+		<referenceContainer name="content">
+			<block class="Excellence\AjaxTutorial\Block\Index\Index" name="index.index" template="Excellence_AjaxTutorial::index/index.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

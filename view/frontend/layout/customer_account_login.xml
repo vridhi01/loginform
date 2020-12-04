@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		<script src="Excellence_AjaxTutorial::js/logindata.js"/>
+	</head>
+    <body>
+        <referenceContainer name="content">
+            <!-- customer.form.login.extra -->
+            <container name="customer.login.container" label="Customer Login Container" htmlTag="div" htmlClass="login-container">
+                <block class="Excellence\AjaxTutorial\Block\Form\Login" name="customer_form_login" template="Excellence_AjaxTutorial::form/login.phtml"/>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
